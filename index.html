@@ -13,32 +13,18 @@
       <div id="order" ng-controller='orderCtrl'>
         <h2>Your Order</h2>
         <ul>
-          <li ng-repeat='item in items'>
-            <div class="left">{{item.name}}</div>
-            <div class="right">{{'$' + item.cost}}</div>
+          <li ng-repeat='item in items' ng-click="total(item)">
+            <!-- <a href="#" ng-click="total(item.cost)"> -->
+              <div class="left">{{item.name}}</div>
+              <div class="right">{{item.cost | currency}}</div>
+            <!-- </a> -->
           </li>
-         <!--  <li>
-            <div class="left"></div>
-            <div class="right">$</div>
-          </li>
-          <li>
-            <div class="left"></div>
-            <div class="right">$</div>
-          </li>
-          <li>
-            <div class="left"></div>
-            <div class="right">$</div>
-          </li>
-          <li>
-            <div class="left"></div>
-            <div class="right">$</div>
-          </li> -->
         </ul>
         <hr>
         <ul id="total">
           <li>
             <div class="left">Total</div>
-            <div class="right">$</div>
+            <div class="right">{{ totalAmount | currency }}</div>
           </li>
         </ul>
       </div>

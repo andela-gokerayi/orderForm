@@ -14,5 +14,13 @@ orderForm.controller('orderCtrl', function($scope) {
    'cost' : 500}
   ];
 
-  $scope.total = 'cost';
+  $scope.totalAmount = 0;
+
+
+  $scope.total = function(item) {
+    $scope.totalAmount += item.cost;
+    // console.log($scope.totalAmount);
+
+    return $scope.totalAmount;
+  };
 });
